@@ -1,6 +1,8 @@
 /**
- * [Clock description]
- * @param {[type]} options [description]
+ *  Clock.js - a basic animated clock in JavaScript.
+ *  v0.0.1 - 20130514
+ *  (c) 2013 Miguel Mota [www.miguelmota.com]
+ *  Released under the MIT license.
  */
 
 (function( global ) {
@@ -421,6 +423,7 @@
         return this;
     };
 
+    // Export
     global.Clock = Clock;
 
 })( this );
