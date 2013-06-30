@@ -32,55 +32,57 @@
         var _this = this;
 
         // Settings
-        this.settings = {};
+        this.settings = {
 
-        // Set border width
-        this.settings.lineWidth = 15,
+            // Set border width
+            lineWidth: 15,
 
-        // Set circle radius
-        this.settings.radius = 100,
+            // Set circle radius
+            radius: 100,
 
-        this.settings.secondsCanvas = true;
-        this.settings.minutesCanvas = true;
-        this.settings.hoursCanvas = true;
-        this.settings.daysCanvas = true;
+            secondsCanvas: true,
+            minutesCanvas: true,
+            hoursCanvas: true,
+            daysCanvas: true,
 
-        // Set stroke style
-        this.settings.secondsStrokeStyle = "#000";
-        this.settings.minutesStrokeStyle = "#000";
-        this.settings.hoursStrokeStyle = "#000";
-        this.settings.daysStrokeStyle = "#000";
+            // Set stroke style
+            secondsStrokeStyle: "#000",
+            minutesStrokeStyle: "#000",
+            hoursStrokeStyle: "#000",
+            daysStrokeStyle: "#000",
 
-        // Set fill style
-        this.settings.secondsFillStyle = null;
-        this.settings.minutesFillStyle = null;
-        this.settings.hoursFillStyle = null;
-        this.settings.daysFillStyle = null;
+            // Set fill style
+            secondsFillStyle: null,
+            minutesFillStyle: null,
+            hoursFillStyle: null,
+            daysFillStyle: null,
 
-        // Set shadow color
-        this.settings.minutesShadowcolor = null;
-        this.settings.secondsShadowColor = null;
-        this.settings.hoursShadowColor = null;
-        this.settings.daysShadowColor = null;
+            // Set shadow color
+            minutesShadowcolor: null,
+            secondsShadowColor: null,
+            hoursShadowColor: null,
+            daysShadowColor: null,
 
-        // Set shaodow blur
-        this.settings.shadowBlur = 0;
+            // Set shaodow blur
+            shadowBlur: 0,
 
-        // Set time
-        this.settings.now = new Date();
-        this.settings.startDate = null;
-        this.settings.endDate = null;
+            // Set time
+            now: new Date(),
+            startDate: null,
+            endDate: null,
 
-        // Set selectors
-        this.settings.daysCanvasSelector = "#days-canvas";
-        this.settings.hoursCanvasSelector = "#hours-canvas";
-        this.settings.minutesCanvasSelector = "#minutes-canvas";
-        this.settings.secondsCanvasSelector = "#seconds-canvas";
+            // Set selectors
+            daysCanvasSelector: "#days-canvas",
+            hoursCanvasSelector: "#hours-canvas",
+            minutesCanvasSelector: "#minutes-canvas",
+            secondsCanvasSelector: "#seconds-canvas",
 
-        this.settings.daysCountSelector = "#days-count";
-        this.settings.hoursCountSelector = "#hours-count";
-        this.settings.minutesCountSelector = "#minutes-count";
-        this.settings.secondsCountSelector = "#seconds-count";
+            daysCountSelector: "#days-count",
+            hoursCountSelector: "#hours-count",
+            minutesCountSelector: "#minutes-count",
+            secondsCountSelector: "#seconds-count"
+
+        };
 
         // Merge user settings with default settings
         this.settings = this.mergeObj( this.settings, options );
@@ -101,31 +103,109 @@
         this.minutesCountElement = document.querySelector( this.settings.minutesCountSelector );
         this.secondsCountElement = document.querySelector( this.settings.secondsCountSelector );
 
+        var clock = false;
+
         // Regular clock
         if (!this.settings.startDate && !this.settings.endDate) {
             this.settings.now = new Date();
             this.settings.startDate = null;
             this.settings.endDate = null;
+
+            clock = true;
         }
+
+        var between = false;
 
         // Between two dates
         if (this.settings.startDate < this.settings.endDate) {
             this.settings.now = ( ( new Date( this.settings.now ) ).getTime() / 1000 );
-            this.settings.startDate = ( new Date( this.settings.startDate ).getTime() / 1000 );
-            this.settings.endDate = ( new Date( this.settings.endDate ).getTime() / 1000 );
+
+            var datetime = this.settings.startDate.split(' ');
+            var dateValues = datetime[0].split('/');
+            var timeValues = datetime[1].split(':');
+
+            for (var i = 0; i < dateValues.length; i++) {
+                dateValues[i] = parseInt(dateValues[i], 10);
+            }
+
+            for (var i = 0; i < timeValues.length; i++) {
+                timeValues[i] = parseInt(timeValues[i], 10);
+            }
+
+            var month   = dateValues[0];
+            var day     = dateValues[1];
+            var year    = dateValues[2];
+
+            var hours   = timeValues[0];
+            var minutes = timeValues[1];
+            var seconds = timeValues[2];
+
+            this.settings.startDate = ( new Date( year, month, day, hours, minutes, seconds ).getTime() / 1000 );
+
+
+            var datetime = this.settings.endDate.split(' ');
+            var dateValues = datetime[0].split('/');
+            var timeValues = datetime[1].split(':');
+
+            for (var i = 0; i < dateValues.length; i++) {
+                dateValues[i] = parseInt(dateValues[i], 10);
+            }
+
+            for (var i = 0; i < timeValues.length; i++) {
+                timeValues[i] = parseInt(timeValues[i], 10);
+            }
+
+            var month   = dateValues[0];
+            var day     = dateValues[1];
+            var year    = dateValues[2];
+
+            var hours   = timeValues[0];
+            var minutes = timeValues[1];
+            var seconds = timeValues[2];
+
+            this.settings.endDate = ( new Date( year, month, day, hours, minutes, seconds ).getTime() / 1000 );
+
+            between = true;
         }
+
+        var countdown = false;
 
         // Countdown
         if (!this.settings.startDate && this.settings.endDate) {
             this.settings.now = ( ( new Date() ).getTime() / 1000 );
             this.settings.startDate = this.settings.now;
-            this.settings.endDate = ( new Date( this.settings.endDate ).getTime() / 1000 );
+
+            var datetime = this.settings.endDate.split(' ');
+            var dateValues = datetime[0].split('/');
+            var timeValues = datetime[1].split(':');
+
+            for (var i = 0; i < dateValues.length; i++) {
+                dateValues[i] = parseInt(dateValues[i], 10);
+            }
+
+            for (var i = 0; i < timeValues.length; i++) {
+                timeValues[i] = parseInt(timeValues[i], 10);
+            }
+
+            var month   = dateValues[0];
+            var day     = dateValues[1];
+            var year    = dateValues[2];
+
+            var hours   = timeValues[0];
+            var minutes = timeValues[1];
+            var seconds = timeValues[2];
+
+            this.settings.endDate = ( new Date( year, month - 1, day, hours, minutes, seconds ).getTime() / 1000 );
+
+            countdown = true;
+
         }
 
         // Calculate clock time
-        if (!this.settings.startDate && !this.settings.endDate) {
+        if (clock) {
+            this.settings.now = new Date();
             this.settings.total = null;
-            this.settings.days = this.settings.now.getHours();
+
             this.settings.hours = this.settings.now.getHours();
             this.settings.minutes = this.settings.now.getMinutes();
             this.settings.seconds = this.settings.now.getSeconds();
@@ -134,7 +214,7 @@
         }
 
         // Calculate times in between
-        if (this.settings.startDate < this.settings.endDate) {
+        if (between) {
             this.settings.total = ( Math.floor( ( this.settings.endDate - this.settings.startDate ) / 86400 ) );
             this.settings.days = ( Math.floor( ( this.settings.endDate - this.settings.startDate ) / 86400 ) );
             this.settings.hours = ( 24 - Math.floor( ( ( this.settings.endDate - this.settings.now ) % 86400) / 3600 ) );
@@ -145,15 +225,17 @@
         }
 
         // Calculate countdown times
-        if (!this.settings.startDate && this.settings.endDate) {
+        if (countdown) {
             this.settings.total = ( Math.floor( ( this.settings.endDate - this.settings.startDate ) / 86400 ) );
             this.settings.days = ( Math.floor( ( this.settings.endDate - this.settings.now ) / 86400 ) );
+
             this.settings.hours = ( 24 - Math.floor( ( ( this.settings.endDate - this.settings.now ) % 86400) / 3600 ) );
             this.settings.minutes = ( 60 - Math.floor( ( ( ( this.settings.endDate - this.settings.now ) % 86400 ) % 3600) / 60 ) );
             this.settings.seconds = ( Math.floor( this.settings.now % 60 ) );
 
             this.settings.modeClock = false;
-        }
+
+        };
 
         // Get Degree method
         this.getDeg = function(deg) {
@@ -161,7 +243,7 @@
         };
 
         // Canvas circle constructor
-        this.circle = function( canvas, strokeStyle, arcArgs, fillStyle = null ) {
+        this.circle = function( canvas, strokeStyle, arcArgs, fillStyle ) {
 
             // Set variables
             this.canvas = canvas;
@@ -330,7 +412,6 @@
 
                     _this.settings.now = new Date();
 
-                    _this.settings.days = _this.settings.now.getHours();
                     _this.settings.hours = _this.settings.now.getHours();
                     _this.settings.minutes = _this.settings.now.getMinutes();
                     _this.settings.seconds = _this.settings.now.getSeconds();

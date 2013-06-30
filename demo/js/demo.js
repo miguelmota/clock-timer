@@ -104,7 +104,7 @@
 
 	// Clock Seven
 	var optionsSeven = {
-		endDate: "12/31/2013 24:00:00",
+		endDate: "6/30/2013 24:00:00",
 		secondsCanvasSelector: "#seconds-canvas-seven",
 		minutesCanvasSelector: "#minutes-canvas-seven",
 		hoursCanvasSelector: "#hours-canvas-seven",
