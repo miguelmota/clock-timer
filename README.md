@@ -3,7 +3,7 @@
 Display a really basic animated clock with JavaScript.
 
 ### Demo
-[http://miguelmota.github.io/labs/clock.js/](http://miguelmota.github.io/labs/clock.js/)
+[http://www.clockjs.org/](http://www.clockjs.org/)
 
 ### Disclaimer
 
