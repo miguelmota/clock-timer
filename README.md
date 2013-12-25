@@ -1,8 +1,6 @@
-# Clock.js
+# Clock.js v0.1.0
 
-v0.1.0
-
-Display a really basic animated clock with JavaScript
+Display a really basic animated clock with JavaScript.
 
 ### Demo
 
@@ -10,4 +8,4 @@ Display a really basic animated clock with JavaScript
 
 ### License
 
-Released under the MIT License
+Released under the MIT License.
