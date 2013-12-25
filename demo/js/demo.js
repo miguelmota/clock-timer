@@ -18,7 +18,7 @@
 
 	// Clock Two
 	var optionsTwo = {
-		endDate: "12/31/2013 24:00:00",
+		endDate: "12/31/2014 24:00:00",
 		secondsCanvasSelector: "#seconds-canvas-two",
 		minutesCanvasSelector: "#minutes-canvas-two",
 		hoursCanvasSelector: "#hours-canvas-two",
@@ -33,8 +33,8 @@
 
 	// Clock Three
 	var optionsThree = {
-		startDate: "10/31/2013 24:00:00",
-		endDate: "12/24/2013 24:00:00",
+		startDate: "10/31/2014 24:00:00",
+		endDate: "12/24/2014 24:00:00",
 		secondsCanvasSelector: "#seconds-canvas-three",
 		minutesCanvasSelector: "#minutes-canvas-three",
 		hoursCanvasSelector: "#hours-canvas-three",
@@ -49,7 +49,7 @@
 
 	// Clock Four
 	var optionsFour = {
-		endDate: "12/24/2013 24:00:00",
+		endDate: "12/24/2014 24:00:00",
 		lineWidth: 2,
 		radius: 120,
 		secondsStrokeStyle: "#C7181D",
@@ -70,7 +70,7 @@
 
 	// Clock Five
 	var optionsFive = {
-		endDate: "12/24/2013 24:00:00",
+		endDate: "12/24/2014 24:00:00",
 		secondsCanvas: false,
 		minutesCanvas: false,
 		hoursCanvas: false,
@@ -89,7 +89,7 @@
 
 	// Clock Six
 	var optionsSix = {
-		endDate: "12/31/2013 24:00:00",
+		endDate: "12/31/2014 24:00:00",
 		secondsCanvasSelector: "#seconds-canvas-six",
 		minutesCanvasSelector: "#minutes-canvas-six",
 		hoursCanvasSelector: "#hours-canvas-six",
@@ -104,7 +104,7 @@
 
 	// Clock Seven
 	var optionsSeven = {
-		endDate: "6/30/2013 24:00:00",
+		endDate: "6/30/2014 24:00:00",
 		secondsCanvasSelector: "#seconds-canvas-seven",
 		minutesCanvasSelector: "#minutes-canvas-seven",
 		hoursCanvasSelector: "#hours-canvas-seven",
