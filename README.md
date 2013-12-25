@@ -1,14 +1,13 @@
-## Clock.js
+# Clock.js
 
-Display a really basic animated clock with JavaScript.
+v0.1.0
+
+Display a really basic animated clock with JavaScript
 
 ### Demo
-[http://www.clockjs.org/](http://www.clockjs.org/)
 
-### Disclaimer
-
-Clock.js is a work in progress, use at your own risk.
+[http://lab.miguelmota.com/clock](http://lab.miguelmota.com/clock)
 
 ### License
 
-Released under the MIT License.
+Released under the MIT License
