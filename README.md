@@ -2,10 +2,10 @@
 
 Display a really basic animated clock with JavaScript.
 
-### Demo
+## Demo
 
 [http://lab.miguelmota.com/clock](http://lab.miguelmota.com/clock)
 
-### License
+## License
 
 Released under the MIT License.
