@@ -10,7 +10,7 @@ Display a really basic animated clock with JavaScript.
 
 HTML
 
-```
+```html
 <div class="clock">
 	<canvas id="days-canvas"></canvas>
 	<label><span id="days-count"></span> Days</label>
@@ -32,20 +32,6 @@ HTML
 </div>
 ```
 
-JavaScript
-
-```javascript
-<script src="clock.js"></script>
-
-<script>
-var options = {
-	endDate: "12/31/2013 24:00:00"
-};
-
-window.clock = new Clock( options );
-</script>
-```
-
 CSS
 
 ```css
@@ -64,6 +50,20 @@ label {
 	margin: -10px 0 0 -50px;
 	text-align: center;
 }
+```
+
+JavaScript
+
+```javascript
+<script src="clock.js"></script>
+
+<script>
+var options = {
+	endDate: "12/31/2013 24:00:00"
+};
+
+window.clock = new Clock( options );
+</script>
 ```
 
 All Options
