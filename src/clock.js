@@ -1,6 +1,6 @@
 /**
  *  Clock.js - a basic animated clock in JavaScript.
- *  v0.0.1 - 20130514
+ *  v0.0.2
  *  (c) 2013 Miguel Mota [www.miguelmota.com]
  *  Released under the MIT license.
  */
@@ -140,7 +140,7 @@
             var minutes = timeValues[1];
             var seconds = timeValues[2];
 
-            this.settings.startDate = ( new Date( year, month, day, hours, minutes, seconds ).getTime() / 1000 );
+            this.settings.startDate = ( Date.UTC( year, month, day, hours, minutes, seconds ) / 1000 );
 
 
             var datetime = this.settings.endDate.split(' ');
@@ -163,7 +163,7 @@
             var minutes = timeValues[1];
             var seconds = timeValues[2];
 
-            this.settings.endDate = ( new Date( year, month, day, hours, minutes, seconds ).getTime() / 1000 );
+            this.settings.endDate = ( Date.UTC( year, month, day, hours, minutes, seconds ) / 1000 );
 
             between = true;
         }
@@ -195,7 +195,8 @@
             var minutes = timeValues[1];
             var seconds = timeValues[2];
 
-            this.settings.endDate = ( new Date( year, month - 1, day, hours, minutes, seconds ).getTime() / 1000 );
+            this.settings.endDate = ( Date.UTC( year, month - 1, day, hours, minutes, seconds ) / 1000 );
+            console.log(this.settings.endDate)
 
             countdown = true;
 
