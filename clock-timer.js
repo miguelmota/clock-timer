@@ -1,6 +1,6 @@
 /**
  *  clock-timer.js - a basic animated clock in JavaScript.
- *  v0.0.2
+ *  v0.0.1
  *  (c) 2013 Miguel Mota [www.miguelmota.com]
  *  Released under the MIT license.
  */

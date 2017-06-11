@@ -2,7 +2,7 @@
 
 > Display a really basic animated clock with JavaScript.
 
-<img src="https://raw.githubusercontent.com/miguelmota/clock-timer/master/screenshot_.gif" width="600" />
+<img src="https://raw.githubusercontent.com/miguelmota/clock-timer/master/screenshot.gif" width="600" />
 
 ## Demo
 
