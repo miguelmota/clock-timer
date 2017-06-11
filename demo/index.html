@@ -2,38 +2,23 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<!--
-           ___                      ___
-          (   )                    (   )
-  .--.     | |    .--.     .--.     | |   ___              .-.      .--.
- /    \    | |   /    \   /    \    | |  (   )            ( __)   /  _  \
-|  .-. ;   | |  |  .-. ; |  .-. ;   | |  ' /              (''")  . .' `. ;
-|  |(___)  | |  | |  | | |  |(___)  | |,' /                | |   | '   | |
-|  |       | |  | |  | | |  |       | .  '.                | |   _\_`.(___)
-|  | ___   | |  | |  | | |  | ___   | | `. \               | |  (   ). '.
-|  '(   )  | |  | '  | | |  '(   )  | |   \ \    .-.       | |   | |  `\ |
-'  `-' |   | |  '  `-' / '  `-' |   | |    \ .  (   )  ___ | |   ; '._,' '
- `.__,'   (___)  `.__.'   `.__,'   (___ ) (___)  `-'  (   )' |    '.___.'
-                                                       ; `-' '
-                                                        .__.'
-	-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="A simple JavaScript countdown clock.">
 	<meta name="keywords" content="clock.js, clockjs, javascript clock, javascript countdown, javascript timer">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
-	<title>Clock.js</title>
+	<title>clock-timer.js</title>
 	<link rel="canonical" href="http://www.miguelmota.com/labs/clockjs/">
 	<link rel="shortcut icon" href="http://www.miguelmota.com/favicon.ico">
-	<script src="../src/clock.js"></script>
+	<script src="../clock-timer.js"></script>
 	<link href="css/demo.css" rel="stylesheet">
 </head>
 <body>
 
-	<h1>Clock.js</h1>
+	<h1>clock-timer.js</h1>
 
 	<p class="tagline">Display a really basic animated clock with JavaScript.</p>
 
-	<p class="download"><a href="https://github.com/miguelmota/clock.js" target="_blank" data-ga-label="Github page">Github</a> | <a href="https://raw.github.com/miguelmota/clock.js/master/src/clock.js" target="_blank" data-ga-label="Download">Download</a></p>
+	<p class="download"><a href="https://github.com/miguelmota/clock-timer" target="_blank" data-ga-label="Github page">Github</a> | <a href="https://raw.github.com/miguelmota/clock-timer/master/clock-timer.js" target="_blank" data-ga-label="Download">Download</a></p>
 
 	<section class="clocks">
 
@@ -57,7 +42,7 @@
 	</section>
 
 	<section class="code">
-		<pre>window.clock = new Clock();</pre>
+		<pre>window.clock = new ClockTimer();</pre>
 	</section>
 
 	<section class="clocks">
@@ -89,10 +74,10 @@
 		<section class="code">
 			<pre>
 	var options = {
-		endDate: "12/31/2018 24:00:00"
+		endDate: "12/31/2018 24:00:00" // UTC
 	};
 
-	window.clock = new Clock( options );
+	window.clock = new ClockTimer( options );
 			</pre>
 		</section>
 
@@ -129,7 +114,7 @@ var options = {
 	endDate: "12/24/2018 24:00:00"
 };
 
-window.clock = new Clock( options );
+window.clock = new ClockTimer( options );
 		</pre>
 	</section>
 
@@ -171,7 +156,7 @@ var options = {
 		daysStrokeStyle: "#371979"
 };
 
-window.clock = new Clock( options );
+window.clock = new ClockTimer( options );
 		</pre>
 	</section>
 
@@ -199,7 +184,7 @@ window.clock = new Clock( options );
 		daysCanvas: false,
 	};
 
-	window.clock = new Clock( options );
+	window.clock = new ClockTimer( options );
 			</pre>
 		</section>
 
@@ -248,7 +233,7 @@ var options = {
 	endDate: "12/31/2018 24:00:00"
 };
 
-window.clock = new Clock( options );
+window.clock = new ClockTimer( options );
 &lt;/script&gt;
 				</pre>
 			</section>

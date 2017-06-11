@@ -14,7 +14,7 @@
 		hoursCountSelector: "#hours-count-one"
 	};
 
-	window.clockOne = new Clock( optionsOne );
+	window.clockOne = new ClockTimer( optionsOne );
 
 	// Clock Two
 	var optionsTwo = {
@@ -29,7 +29,7 @@
 		daysCountSelector: "#days-count-two"
 	};
 
-	window.clockTwo = new Clock( optionsTwo );
+	window.clockTwo = new ClockTimer( optionsTwo );
 
 	// Clock Three
 	var optionsThree = {
@@ -45,7 +45,7 @@
 		daysCountSelector: "#days-count-three"
 	};
 
-	window.clockThree = new Clock( optionsThree );
+	window.clockThree = new ClockTimer( optionsThree );
 
 	// Clock Four
 	var optionsFour = {
@@ -66,7 +66,7 @@
 		daysCountSelector: "#days-count-four"
 	};
 
-	window.clockFour = new Clock( optionsFour );
+	window.clockFour = new ClockTimer( optionsFour );
 
 	// Clock Five
 	var optionsFive = {
@@ -85,7 +85,7 @@
 		daysCountSelector: "#days-count-five"
 	};
 
-	window.clockFive = new Clock( optionsFive );
+	window.clockFive = new ClockTimer( optionsFive );
 
 	// Clock Six
 	var optionsSix = {
@@ -100,7 +100,7 @@
 		daysCountSelector: "#days-count-six"
 	};
 
-	window.clockSix = new Clock( optionsSix );
+	window.clockSix = new ClockTimer( optionsSix );
 
 	// Clock Seven
 	var optionsSeven = {
@@ -115,6 +115,6 @@
 		daysCountSelector: "#days-count-seven"
 	};
 
-	window.clockSix = new Clock( optionsSeven );
+	window.clockSix = new ClockTimer( optionsSeven );
 
 })();

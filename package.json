@@ -1,0 +1,42 @@
+{
+  "name": "clock-timer",
+  "version": "0.0.1",
+  "description": "clock-timer Filter algorithm in JavaScript.",
+  "main": "clock-timer.js",
+  "files": [
+    "clock-timer.js"
+  ],
+  "scripts": {
+    "test": "echo 'no tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/clock-timer"
+  },
+  "keywords": [
+    "clock",
+    "timer",
+    "countdown",
+    "circle",
+    "canvas"
+  ],
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "http://www.miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/clock-timer/blob/master/LICENSE.md"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/clock-timer/issues"
+  },
+  "homepage": "https://github.com/miguelmota/clock-timer",
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

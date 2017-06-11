@@ -1,10 +1,12 @@
-# Clock.js v0.1.0
+# clock-timer
 
-Display a really basic animated clock with JavaScript.
+> Display a really basic animated clock with JavaScript.
+
+<img src="https://raw.githubusercontent.com/miguelmota/clock-timer/master/screenshot.gif" width="600" />
 
 ## Demo
 
-[http://lab.miguelmota.com/clock](http://lab.miguelmota.com/clock)
+[http://lab.miguelmota.com/clock-timer](http://lab.miguelmota.com/clock-timer)
 
 ## Usage
 
@@ -59,10 +61,10 @@ JavaScript
 
 <script>
 var options = {
-	endDate: "12/31/2013 24:00:00"
+	endDate: "12/31/2013 24:00:00" // UTC
 };
 
-window.clock = new Clock( options );
+window.clock = new ClockTimer( options );
 </script>
 ```
 

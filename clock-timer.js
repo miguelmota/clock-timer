@@ -1,16 +1,16 @@
 /**
- *  Clock.js - a basic animated clock in JavaScript.
+ *  clock-timer.js - a basic animated clock in JavaScript.
  *  v0.0.2
  *  (c) 2013 Miguel Mota [www.miguelmota.com]
  *  Released under the MIT license.
  */
 
-(function( global ) {
+(function( root ) {
 
     "use strict";
 
     // Clock constructor
-    var Clock = function ( options ) {
+    var ClockTimer = function ( options ) {
 
         // Shallow object merging
         this.mergeObj = function ( obj1, obj2 ){
@@ -67,7 +67,7 @@
             shadowBlur: 0,
 
             // Set time
-            now: new Date(),
+            now: new Date(Date.now()),
             startDate: null,
             endDate: null,
 
@@ -107,7 +107,7 @@
 
         // Regular clock
         if (!this.settings.startDate && !this.settings.endDate) {
-            this.settings.now = new Date();
+            this.settings.now = new Date(Date.now());
             this.settings.startDate = null;
             this.settings.endDate = null;
 
@@ -196,7 +196,6 @@
             var seconds = timeValues[2];
 
             this.settings.endDate = ( Date.UTC( year, month - 1, day, hours, minutes, seconds ) / 1000 );
-            console.log(this.settings.endDate)
 
             countdown = true;
 
@@ -506,6 +505,17 @@
     };
 
     // Export
-    global.Clock = Clock;
+    if (typeof exports !== 'undefined') {
+      if (typeof module !== 'undefined' && module.exports) {
+        exports = module.exports = ClockTimer;
+      }
+      exports.ClockTimer = ClockTimer;
+    } else if (typeof define === 'function' && define.amd) {
+      define([], function() {
+        return ClockTimer;
+      });
+    } else {
+      root.ClockTimer = ClockTimer;
+    }
 
 })( this );
